@@ -190,7 +190,7 @@ const Software = () => {
                   
                   <CardContent className="text-center">
                     <p className="text-gray-600 mb-4">
-                      {categoria.descripcion}
+                      {categoria.description}
                     </p>
                     <Badge variant="secondary" className="bg-[#00C8CF]/10 text-[#00C8CF]">
                       {categoria.productos}
