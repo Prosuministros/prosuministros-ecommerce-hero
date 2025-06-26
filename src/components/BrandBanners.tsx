@@ -1,6 +1,7 @@
 
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import { ExternalLink } from 'lucide-react'
 
 const BrandBanners = () => {
@@ -42,8 +43,8 @@ const BrandBanners = () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Marcas Aliadas
           </h2>
@@ -53,62 +54,85 @@ const BrandBanners = () => {
             tecnología de vanguardia
           </p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {featuredBrands.map((brand) => (
-            <Card 
-              key={brand.id} 
-              className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 overflow-hidden border-0"
-            >
-              <CardContent className="p-0 relative">
-                <div className={`bg-gradient-to-br ${brand.gradient} p-8 text-center relative overflow-hidden min-h-[300px] flex flex-col justify-between`}>
-                  {/* Elementos decorativos de fondo */}
-                  <div className="absolute top-4 right-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
-                  <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/5 rounded-full blur-lg"></div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
-                  
-                  {/* Contenido superior */}
-                  <div className="relative z-10">
-                    <div className="mb-6">
-                      <img
-                        src={brand.logo}
-                        alt={brand.name}
-                        className="w-20 h-20 object-cover mx-auto rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300"
-                      />
+      {/* Carrusel de banners de ancho completo */}
+      <div className="w-full">
+        <Carousel 
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {featuredBrands.map((brand) => (
+              <CarouselItem key={brand.id} className="pl-2 md:pl-4">
+                <Card className="border-0 shadow-none">
+                  <CardContent className="p-0">
+                    <div className={`bg-gradient-to-r ${brand.gradient} relative overflow-hidden min-h-[300px] md:min-h-[400px] flex items-center`}>
+                      {/* Elementos decorativos de fondo */}
+                      <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+                      <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-2xl"></div>
+                      <div className="absolute top-1/2 right-1/4 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
+                      
+                      {/* Contenido del banner */}
+                      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                          {/* Contenido de texto */}
+                          <div className="text-center md:text-left">
+                            <div className="flex items-center justify-center md:justify-start mb-6">
+                              <img
+                                src={brand.logo}
+                                alt={brand.name}
+                                className="w-16 h-16 md:w-20 md:h-20 object-cover rounded-xl shadow-lg mr-4"
+                              />
+                              <h3 className={`text-3xl md:text-4xl font-bold ${brand.textColor}`}>
+                                {brand.name}
+                              </h3>
+                            </div>
+                            
+                            <p className={`${brand.textColor} text-xl md:text-2xl font-medium mb-4 italic`}>
+                              "{brand.tagline}"
+                            </p>
+                            
+                            <p className={`${brand.textColor}/90 text-lg md:text-xl mb-8 leading-relaxed max-w-md mx-auto md:mx-0`}>
+                              {brand.description}
+                            </p>
+                            
+                            <Button
+                              size="lg"
+                              className={`${brand.buttonStyle} font-semibold text-lg px-8 py-3`}
+                            >
+                              <ExternalLink className="w-5 h-5 mr-2" />
+                              Ver Productos
+                            </Button>
+                          </div>
+                          
+                          {/* Área visual decorativa */}
+                          <div className="hidden md:flex items-center justify-center">
+                            <div className="relative">
+                              <div className={`w-64 h-64 bg-white/10 rounded-full blur-sm`}></div>
+                              <div className={`absolute top-8 left-8 w-48 h-48 bg-white/20 rounded-full blur-lg`}></div>
+                              <div className={`absolute top-16 left-16 w-32 h-32 bg-white/30 rounded-full`}></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    
-                    <h3 className={`text-2xl font-bold ${brand.textColor} mb-2`}>
-                      {brand.name}
-                    </h3>
-                  </div>
-                  
-                  {/* Contenido central */}
-                  <div className="relative z-10 flex-1 flex flex-col justify-center">
-                    <p className={`${brand.textColor} text-lg font-medium mb-4 italic`}>
-                      "{brand.tagline}"
-                    </p>
-                    
-                    <p className={`${brand.textColor}/90 mb-6 leading-relaxed`}>
-                      {brand.description}
-                    </p>
-                  </div>
-                  
-                  {/* Botón inferior */}
-                  <div className="relative z-10">
-                    <Button
-                      className={`${brand.buttonStyle} group-hover:scale-105 transition-all duration-300 font-semibold`}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Ver Productos
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          
+          <CarouselPrevious className="left-4 md:left-8" />
+          <CarouselNext className="right-4 md:right-8" />
+        </Carousel>
+      </div>
 
-        {/* Banner promocional especial */}
+      {/* Banner promocional inferior */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <div className="bg-gradient-to-r from-[#00C8CF] to-[#00A5B0] rounded-2xl p-8 text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
