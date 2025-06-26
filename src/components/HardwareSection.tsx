@@ -29,7 +29,7 @@ const HardwareSection = () => {
               <CardHeader>
                 <div className="relative overflow-hidden rounded-lg mb-4">
                   <img
-                    src={product.image}
+                    src={product.images[0]}
                     alt={product.name}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />

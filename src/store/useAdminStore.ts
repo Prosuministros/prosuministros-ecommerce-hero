@@ -10,14 +10,15 @@ interface AdminUser {
 interface Product {
   id: string
   name: string
-  category: 'hardware' | 'software' | 'service'
-  price: number
+  sku: string
   description: string
-  image: string
-  featured: boolean
+  price: number
   stock: number
+  category: string
+  images: string[]
   brand?: string
   specifications?: Record<string, string>
+  featured?: boolean
 }
 
 interface Brand {
@@ -81,10 +82,11 @@ export const useAdminStore = create<AdminStore>((set, get) => ({
     {
       id: '1',
       name: 'MacBook Pro M3',
+      sku: 'MBP-M3-001',
       category: 'hardware',
       price: 8500000,
       description: 'Laptop profesional con chip M3 de Apple',
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500',
+      images: ['https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500'],
       featured: true,
       stock: 15,
       brand: 'Apple',
@@ -97,10 +99,11 @@ export const useAdminStore = create<AdminStore>((set, get) => ({
     {
       id: '2',
       name: 'Logitech MX Master 3S',
+      sku: 'LOG-MX3S-001',
       category: 'hardware',
       price: 350000,
       description: 'Mouse inalámbrico profesional',
-      image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500',
+      images: ['https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500'],
       featured: true,
       stock: 25,
       brand: 'Logitech'
@@ -108,10 +111,11 @@ export const useAdminStore = create<AdminStore>((set, get) => ({
     {
       id: '3',
       name: 'Microsoft Office 365',
+      sku: 'MS-O365-001',
       category: 'software',
       price: 45000,
       description: 'Suite de productividad empresarial',
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500',
+      images: ['https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500'],
       featured: true,
       stock: 100,
       brand: 'Microsoft'
