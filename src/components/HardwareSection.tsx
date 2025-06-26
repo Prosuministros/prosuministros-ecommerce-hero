@@ -3,15 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { 
   Server, 
-  HardDrive, 
   Network, 
-  Monitor, 
-  Projector, 
+  Computer, 
   Video, 
-  Tv, 
-  Printer, 
-  CreditCard,
-  Phone
+  Printer
 } from 'lucide-react'
 
 const HardwareSection = () => {
@@ -25,66 +20,31 @@ const HardwareSection = () => {
     },
     {
       id: 2,
-      title: "Backup NAS y SAN",
-      icon: HardDrive,
-      image: "https://images.unsplash.com/photo-1597733336794-12d05021d510?w=400&h=300&fit=crop",
-      description: "Soluciones de almacenamiento y respaldo"
-    },
-    {
-      id: 3,
       title: "Networking",
       icon: Network,
       image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=300&fit=crop",
       description: "Equipos de red y conectividad empresarial"
     },
     {
-      id: 4,
-      title: "Monitores",
-      icon: Monitor,
+      id: 3,
+      title: "Computadores",
+      icon: Computer,
       image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&h=300&fit=crop",
-      description: "Monitores profesionales y gaming"
+      description: "Equipos de cómputo para oficina y trabajo"
     },
     {
-      id: 5,
-      title: "Video Proyectores",
-      icon: Projector,
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-      description: "Proyectores para presentaciones y entretenimiento"
-    },
-    {
-      id: 6,
-      title: "Videoconferencia",
+      id: 4,
+      title: "Video conferencia",
       icon: Video,
       image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop",
       description: "Soluciones de videoconferencia empresarial"
     },
     {
-      id: 7,
-      title: "Televisores",
-      icon: Tv,
-      image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400&h=300&fit=crop",
-      description: "Televisores comerciales y domésticos"
-    },
-    {
-      id: 8,
-      title: "Impresoras y Escáneres",
+      id: 5,
+      title: "Impresora",
       icon: Printer,
       image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop",
       description: "Equipos de impresión y digitalización"
-    },
-    {
-      id: 9,
-      title: "Impresoras POS",
-      icon: CreditCard,
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
-      description: "Impresoras para puntos de venta"
-    },
-    {
-      id: 10,
-      title: "Telefonía y Accesorios",
-      icon: Phone,
-      image: "https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?w=400&h=300&fit=crop",
-      description: "Sistemas de telefonía empresarial"
     }
   ]
 
@@ -100,7 +60,7 @@ const HardwareSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {hardwareCategories.map((category) => {
             const IconComponent = category.icon
             return (
