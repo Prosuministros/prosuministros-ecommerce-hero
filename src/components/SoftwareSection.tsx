@@ -15,35 +15,35 @@ const SoftwareSection = () => {
       id: 1,
       title: "Diseño",
       icon: Palette,
-      color: "bg-purple-600",
+      image: "https://images.unsplash.com/photo-1541462608143-67571c6738dd?w=400&h=300&fit=crop",
       products: ["Adobe", "Autodesk"]
     },
     {
       id: 2,
       title: "Microsoft",
       icon: Building2,
-      color: "bg-blue-600",
+      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=300&fit=crop",
       products: ["O365", "Azure"]
     },
     {
       id: 3,
       title: "Ciberseguridad",
       icon: Shield,
-      color: "bg-red-600",
+      image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=400&h=300&fit=crop",
       products: ["AWS", "Check Point", "Trellix", "Acronis", "Hilistone"]
     },
     {
       id: 4,
       title: "Antivirus",
       icon: ShieldCheck,
-      color: "bg-green-600",
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
       products: ["McAfee", "Kaspersky", "ESET", "Bitdefender"]
     },
     {
       id: 5,
       title: "Otros",
       icon: MoreHorizontal,
-      color: "bg-gray-600",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop",
       products: ["Oracle", "Sophos"]
     }
   ]
@@ -66,12 +66,21 @@ const SoftwareSection = () => {
             return (
               <Card key={category.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <CardHeader className="p-0">
-                  <div className={`${category.color} text-white p-6 rounded-t-lg text-center relative overflow-hidden`}>
-                    <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20" />
-                    <IconComponent className="w-8 h-8 mx-auto mb-3 relative z-10" />
-                    <CardTitle className="text-lg font-bold text-white relative z-10">
-                      {category.title}
-                    </CardTitle>
+                  <div className="relative overflow-hidden rounded-t-lg">
+                    <img
+                      src={category.image}
+                      alt={category.title}
+                      className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-2 left-2">
+                      <IconComponent className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="absolute bottom-2 right-2">
+                      <CardTitle className="text-sm font-bold text-white">
+                        {category.title}
+                      </CardTitle>
+                    </div>
                   </div>
                 </CardHeader>
                 
