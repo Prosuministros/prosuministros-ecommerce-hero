@@ -182,7 +182,7 @@ const Admin = () => {
                 <Card key={product.id} className="group hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <img
-                      src={product.image}
+                      src={product.images[0]}
                       alt={product.name}
                       className="w-full h-48 object-cover rounded-lg mb-4"
                     />
