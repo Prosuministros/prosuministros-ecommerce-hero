@@ -22,7 +22,7 @@ const ProvidersSection = () => {
         </div>
         
         <div className="relative overflow-hidden">
-          <div className="flex animate-scroll space-x-12 items-center justify-center">
+          <div className="flex animate-pulse space-x-12 items-center justify-center">
             {providers.concat(providers).map((provider, index) => (
               <div 
                 key={index}
@@ -38,25 +38,6 @@ const ProvidersSection = () => {
           </div>
         </div>
       </div>
-      
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        
-        .animate-scroll {
-          animation: scroll 20s linear infinite;
-        }
-        
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   )
 }
