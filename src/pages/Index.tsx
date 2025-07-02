@@ -1,9 +1,7 @@
 
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import ProvidersSection from '@/components/ProvidersSection'
 import Services from '@/components/Services'
-import TeamSection from '@/components/TeamSection'
 import HardwareSection from '@/components/HardwareSection'
 import SoftwareSection from '@/components/SoftwareSection'
 import FeaturedProducts from '@/components/FeaturedProducts'
@@ -14,9 +12,7 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
       <Hero />
-      <ProvidersSection />
       <Services />
-      <TeamSection />
       <HardwareSection />
       <SoftwareSection />
       <FeaturedProducts />
