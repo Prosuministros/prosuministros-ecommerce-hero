@@ -1,6 +1,6 @@
-
 import { useState } from 'react'
 import { ShoppingCart, Menu, X, MessageCircle } from 'lucide-react'
+import { SiWhatsapp } from 'react-icons/si'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { useStore } from '@/store/useStore'
@@ -29,8 +29,8 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex-shrink-0">
-              <h1 className="text-xl font-bold text-[#00C8CF]">ProSuministros</h1>
+            <div className="flex-shrink-0 flex items-center">
+              <img src="/img/logProsuministrosNegro.png" alt="ProSuministros Logo" className="h-8 w-auto" />
             </div>
 
             {/* Desktop Navigation */}
@@ -55,7 +55,7 @@ const Header = () => {
                 onClick={() => window.open(whatsappUrl, '_blank')}
                 className="hidden sm:flex items-center space-x-2 border-[#00C8CF] text-[#00C8CF] hover:bg-[#00C8CF] hover:text-white"
               >
-                <MessageCircle className="w-4 h-4" />
+                <SiWhatsapp className="w-4 h-4" />
                 <span>WhatsApp</span>
               </Button>
 
@@ -106,7 +106,7 @@ const Header = () => {
                 onClick={() => window.open(whatsappUrl, '_blank')}
                 className="w-full mt-2 border-[#00C8CF] text-[#00C8CF] hover:bg-[#00C8CF] hover:text-white"
               >
-                <MessageCircle className="w-4 h-4 mr-2" />
+                <SiWhatsapp className="w-4 h-4 mr-2" />
                 Contactar por WhatsApp
               </Button>
             </div>

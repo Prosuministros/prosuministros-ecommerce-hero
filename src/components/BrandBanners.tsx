@@ -1,45 +1,10 @@
-
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import { ExternalLink } from 'lucide-react'
 
 const BrandBanners = () => {
-  const featuredBrands = [
-    {
-      id: 1,
-      name: "Apple",
-      logo: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=120&h=120&fit=crop",
-      description: "Innovación y diseño premium para profesionales",
-      tagline: "Think Different",
-      gradient: "from-gray-900 via-gray-800 to-black",
-      textColor: "text-white",
-      buttonStyle: "bg-white text-black hover:bg-gray-100",
-      accentColor: "#ffffff"
-    },
-    {
-      id: 2,
-      name: "Logitech",
-      logo: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=120&h=120&fit=crop",
-      description: "Periféricos y accesorios de alta calidad",
-      tagline: "Aliados en innovación para entornos de trabajo exigentes",
-      gradient: "from-blue-900 via-blue-700 to-cyan-600",
-      textColor: "text-white",
-      buttonStyle: "bg-white text-blue-900 hover:bg-gray-100",
-      accentColor: "#00C8CF"
-    },
-    {
-      id: 3,
-      name: "Microsoft",
-      logo: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=120&h=120&fit=crop",
-      description: "Productividad y colaboración empresarial",
-      tagline: "Empower every person and organization",
-      gradient: "from-blue-600 via-blue-500 to-blue-400",
-      textColor: "text-white",
-      buttonStyle: "bg-white text-blue-600 hover:bg-gray-100",
-      accentColor: "#0078d4"
-    }
-  ]
+  const featuredBrands = []
 
   return (
     <section className="py-16 bg-gray-50">
@@ -124,6 +89,33 @@ const BrandBanners = () => {
                 </Card>
               </CarouselItem>
             ))}
+            <CarouselItem>
+              <div className="w-full min-h-[300px] md:min-h-[400px] flex items-center justify-center bg-[#00c8cf]">
+                <img
+                  src="/img/BannerProsuministros04.jpg"
+                  alt="Banner ProSuministros 04"
+                  className="max-h-[300px] md:max-h-[400px] w-auto object-contain"
+                  style={{ backgroundColor: '#00c8cf' }}
+                />
+              </div>
+            </CarouselItem>
+            <CarouselItem>
+              <div
+                className="w-full min-h-[300px] md:min-h-[400px] flex items-center justify-center bg-[#00c8cf] cursor-pointer"
+                onClick={() => window.open('/logitech', '_blank')}
+                role="button"
+                tabIndex={0}
+                onKeyPress={e => { if (e.key === 'Enter') window.open('/logitech', '_blank') }}
+                aria-label="Ir a landing de Logitech"
+              >
+                <img
+                  src="/img/BannerProsuministros05.jpg"
+                  alt="Banner ProSuministros 05"
+                  className="max-h-[300px] md:max-h-[400px] w-auto object-contain"
+                  style={{ backgroundColor: '#00c8cf' }}
+                />
+              </div>
+            </CarouselItem>
           </CarouselContent>
           
           <CarouselPrevious className="left-4 md:left-8" />
@@ -131,39 +123,6 @@ const BrandBanners = () => {
         </Carousel>
       </div>
 
-      {/* Banner promocional inferior */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-        <div className="bg-gradient-to-r from-[#00C8CF] to-[#00A5B0] rounded-2xl p-8 text-center relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
-          
-          <div className="relative z-10">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              ¿Buscas una marca específica?
-            </h3>
-            <p className="text-white/90 mb-6 text-lg">
-              Contamos con un catálogo amplio de marcas reconocidas mundialmente. 
-              Contáctanos para consultar disponibilidad.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="bg-white text-[#00C8CF] hover:bg-gray-100 font-semibold"
-              >
-                Catálogo Completo
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#00C8CF] font-semibold"
-              >
-                Contactar Asesor
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   )
 }

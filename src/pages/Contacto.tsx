@@ -1,4 +1,3 @@
-
 import Header from '@/components/Header'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -14,6 +13,7 @@ import {
   Send
 } from 'lucide-react'
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -33,15 +33,38 @@ const Contacto = () => {
     }))
   }
 
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Aquí iría la lógica de envío del formulario
-    console.log('Formulario enviado:', formData)
-    
-    // Por ahora, redirigir a WhatsApp con el mensaje
-    const mensaje = `Hola, mi nombre es ${formData.nombre} de ${formData.empresa}. ${formData.mensaje}`
-    const whatsappUrl = `https://wa.me/573183612161?text=${encodeURIComponent(mensaje)}`
-    window.open(whatsappUrl, '_blank')
+    e.preventDefault();
+    emailjs.send(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      {
+        nombre: formData.nombre,
+        email: formData.email,
+        empresa: formData.empresa,
+        telefono: formData.telefono,
+        asunto: formData.asunto,
+        mensaje: formData.mensaje,
+      },
+      PUBLIC_KEY
+    )
+    .then((result) => {
+      alert('¡Mensaje enviado correctamente!');
+      setFormData({
+        nombre: '',
+        email: '',
+        empresa: '',
+        telefono: '',
+        asunto: '',
+        mensaje: ''
+      });
+    }, (error) => {
+      alert('Error al enviar el mensaje. Intenta de nuevo.');
+    });
   }
 
   const whatsappNumber = '573183612161'
@@ -74,71 +97,13 @@ const Contacto = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  Información de Contacto
+                  Escribenos
                 </h2>
                 <p className="text-gray-600 mb-8">
-                  Nuestro equipo de expertos está listo para atenderte y brindarte 
-                  la mejor asesoría tecnológica.
+                  Para solicitar cualquier tipo de información o cotización via correo electrónico.
                 </p>
               </div>
 
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#00C8CF]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-[#00C8CF]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Dirección</h3>
-                    <p className="text-gray-600">
-                      Bogotá, Colombia<br />
-                      Zona Empresarial
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#00C8CF]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-[#00C8CF]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Teléfono</h3>
-                    <p className="text-gray-600">+57 318 361 2161</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#00C8CF]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-[#00C8CF]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">info@prosuministros.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#00C8CF]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-[#00C8CF]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Horarios</h3>
-                    <p className="text-gray-600">
-                      Lunes a Viernes: 8:00 AM - 6:00 PM<br />
-                      Sábados: 8:00 AM - 12:00 PM
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-6">
-                <Button 
-                  onClick={() => window.open(whatsappUrl, '_blank')}
-                  className="w-full bg-[#00C8CF] hover:bg-[#00A5B0] text-white"
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Chatear por WhatsApp
-                </Button>
-              </div>
             </div>
           </div>
 
@@ -250,15 +215,7 @@ const Contacto = () => {
                       <Send className="w-4 h-4 mr-2" />
                       Enviar Mensaje
                     </Button>
-                    <Button 
-                      type="button"
-                      variant="outline"
-                      onClick={() => window.open(whatsappUrl, '_blank')}
-                      className="flex-1 border-[#00C8CF] text-[#00C8CF] hover:bg-[#00C8CF] hover:text-white"
-                    >
-                      <MessageCircle className="w-4 h-4 mr-2" />
-                      WhatsApp Directo
-                    </Button>
+
                   </div>
                 </form>
               </CardContent>
@@ -272,7 +229,7 @@ const Contacto = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              ¿Por qué elegir ProSuministros?
+              ¿Por qué elegir Prosuministros?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Más de 10 años de experiencia respaldando el crecimiento tecnológico 

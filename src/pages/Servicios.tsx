@@ -16,7 +16,7 @@ import {
 const serviciosDetallados = [
   {
     icon: Server,
-    title: 'Infraestructura IT',
+    title: 'Infraestructura IT 2',
     description: 'Diseño e implementación de infraestructura tecnológica escalable y segura para tu empresa.',
     features: [
       'Servidores empresariales Dell, HP, Lenovo',
