@@ -22,15 +22,6 @@ const Hero = () => {
               Proveemos tecnología de vanguardia, software especializado y hardware 
               de alto rendimiento para impulsar el crecimiento de tu empresa.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary" className="bg-white text-[#00C8CF] hover:bg-gray-100">
-                Ver Productos
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#00C8CF]">
-                Conocer Servicios
-              </Button>
-            </div>
           </div>
 
           {/* Feature Icons */}

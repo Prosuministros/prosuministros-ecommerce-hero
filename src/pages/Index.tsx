@@ -50,10 +50,16 @@ const Index = () => {
         </Carousel>
       </div>
       <MarcasCarousel />
-      <Services />
+      <div id="servicios">
+        <Services />
+      </div>
       <EquipoInfo />
-      <HardwareSection />
-      <SoftwareSection />
+      <div id="hardware">
+        <HardwareSection />
+      </div>
+      <div id="software">
+        <SoftwareSection />
+      </div>
       <FeaturedProducts />
       <BrandBanners />
       
