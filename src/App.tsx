@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,7 +7,6 @@ import Index from "./pages/Index";
 import Servicios from "./pages/Servicios";
 import Hardware from "./pages/Hardware";
 import Software from "./pages/Software";
-import Ecommerce from "./pages/Ecommerce";
 import Contacto from "./pages/Contacto";
 import AdminLogin from "./pages/AdminLogin";
 import Admin from "./pages/Admin";
@@ -27,7 +25,6 @@ const App = () => (
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/hardware" element={<Hardware />} />
           <Route path="/software" element={<Software />} />
-          <Route path="/ecommerce" element={<Ecommerce />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<Admin />} />
