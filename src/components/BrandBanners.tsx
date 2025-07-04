@@ -8,18 +8,7 @@ const BrandBanners = () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Marcas Aliadas
-          </h2>
-          <div className="w-16 h-1 bg-[#00C8CF] mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Trabajamos con las mejores marcas del mercado para ofrecerte 
-            tecnología de vanguardia
-          </p>
-        </div>
-      </div>
+
 
       {/* Carrusel de banners de ancho completo */}
       <div className="w-full">

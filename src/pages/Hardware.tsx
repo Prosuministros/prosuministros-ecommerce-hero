@@ -129,7 +129,7 @@ const Hardware = () => {
             <Button 
               size="lg" 
               variant="secondary"
-              onClick={() => window.open('https://zhzwhe-up.myshopify.com/collections/frontpage', '_blank')}
+              onClick={() => window.open('https://zhzwhe-up.myshopify.com/', '_blank')}
               className="bg-white text-[#00C8CF] hover:bg-gray-100"
             >
               Ver Catálogo Completo
@@ -248,7 +248,7 @@ const Hardware = () => {
           <div className="text-center mt-12">
             <Button 
               size="lg" 
-              onClick={() => window.open('https://zhzwhe-up.myshopify.com/collections/frontpage', '_blank')}
+              onClick={() => window.open('https://zhzwhe-up.myshopify.com/', '_blank')}
               className="bg-[#00C8CF] hover:bg-[#00A5B0] text-white"
             >
               Ver Todos los Productos
