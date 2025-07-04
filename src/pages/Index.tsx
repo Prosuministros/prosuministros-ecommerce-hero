@@ -15,80 +15,174 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
       <div className="w-full relative">
-        <Carousel opts={{ align: 'start', loop: true }} className="w-full">
+        <Carousel 
+          opts={{ 
+            align: 'start', 
+            loop: true,
+            slidesToScroll: 1,
+            duration: 20 
+          }} 
+          className="w-full"
+        >
           <CarouselContent>
+            {/* Hero Component */}
             <CarouselItem>
-              <Hero />
+              <div className="w-full h-[350px] xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] overflow-hidden">
+                <Hero />
+              </div>
             </CarouselItem>
+            
+            {/* Banner 1 - Renting Tecnológico */}
             <CarouselItem>
-              <img
-                src="/img/BannerProsuministros01.png"
-                alt="Soluciones de Renting Tecnológico"
-                className="w-full h-[60vw] max-h-[80vh] min-h-[250px] object-contain bg-[#00c8cf]"
-                style={{ backgroundColor: '#00c8cf' }}
-              />
+              <div className="w-full h-[350px] xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] bg-[#00c8cf] flex items-center justify-center relative overflow-hidden">
+                <img
+                  src="/img/BannerProsuministros01.png"
+                  alt="Soluciones de Renting Tecnológico"
+                  className="w-full h-full object-cover object-center
+                            sm:object-contain 
+                            transform scale-110 sm:scale-100
+                            transition-transform duration-300"
+                  style={{
+                    objectPosition: 'center center',
+                    minWidth: '100%',
+                    minHeight: '100%'
+                  }}
+                  loading="lazy"
+                />
+                {/* Overlay sutil para mejor legibilidad en móvil */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10 sm:hidden pointer-events-none" />
+              </div>
             </CarouselItem>
+            
+            {/* Banner 2 - Servicios Integrales */}
             <CarouselItem>
-              <img
-                src="/img/BannerProsuministros02.png"
-                alt="Servicios Integrales para su Negocio"
-                className="w-full h-[60vw] max-h-[80vh] min-h-[250px] object-contain bg-[#00c8cf]"
-                style={{ backgroundColor: '#00c8cf' }}
-              />
+              <div className="w-full h-[350px] xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] bg-[#00c8cf] flex items-center justify-center relative overflow-hidden">
+                <img
+                  src="/img/BannerProsuministros02.png"
+                  alt="Servicios Integrales para su Negocio"
+                  className="w-full h-full object-cover object-center
+                            sm:object-contain 
+                            transform scale-110 sm:scale-100
+                            transition-transform duration-300"
+                  style={{
+                    objectPosition: 'center center',
+                    minWidth: '100%',
+                    minHeight: '100%'
+                  }}
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10 sm:hidden pointer-events-none" />
+              </div>
             </CarouselItem>
+            
+            {/* Banner 3 - Soporte Técnico */}
             <CarouselItem>
-              <img
-                src="/img/BannerProsuministros03.png"
-                alt="Soporte Técnico Especializado"
-                className="w-full h-[60vw] max-h-[80vh] min-h-[250px] object-contain bg-[#00c8cf]"
-                style={{ backgroundColor: '#00c8cf' }}
-              />
+              <div className="w-full h-[350px] xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] bg-[#00c8cf] flex items-center justify-center relative overflow-hidden">
+                <img
+                  src="/img/BannerProsuministros03.png"
+                  alt="Soporte Técnico Especializado"
+                  className="w-full h-full object-cover object-center
+                            sm:object-contain 
+                            transform scale-110 sm:scale-100
+                            transition-transform duration-300"
+                  style={{
+                    objectPosition: 'center center',
+                    minWidth: '100%',
+                    minHeight: '100%'
+                  }}
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10 sm:hidden pointer-events-none" />
+              </div>
             </CarouselItem>
           </CarouselContent>
-          <CarouselPrevious className="left-4 md:left-8" />
-          <CarouselNext className="right-4 md:right-8" />
+          
+          {/* Navigation Buttons */}
+          <CarouselPrevious className="left-2 sm:left-4 md:left-6 lg:left-8 z-20 bg-white/90 hover:bg-white border-2 border-[#00c8cf] text-[#00c8cf] hover:text-[#00c8cf] shadow-lg transition-all duration-200" />
+          <CarouselNext className="right-2 sm:right-4 md:right-6 lg:right-8 z-20 bg-white/90 hover:bg-white border-2 border-[#00c8cf] text-[#00c8cf] hover:text-[#00c8cf] shadow-lg transition-all duration-200" />
         </Carousel>
       </div>
+      
+      {/* Brands Carousel */}
       <MarcasCarousel />
+      
+      {/* Services Section */}
       <div id="servicios">
         <Services />
       </div>
+      
+      {/* Team Info */}
       <EquipoInfo />
+      
+      {/* Hardware Section */}
       <div id="hardware">
         <HardwareSection />
       </div>
+      
+      {/* Software Section */}
       <div id="software">
         <SoftwareSection />
       </div>
+      
+      {/* Brand Banners */}
       <BrandBanners />
       
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <img src="/img/logoprosuministrosBlanco.png" alt="ProSuministros Logo" className="mx-auto mb-4 w-56 h-auto" />
+            {/* Logo Section */}
+            <div className="flex justify-center items-center">
+              <img 
+                src="/img/logoprosuministrosBlanco.png" 
+                alt="ProSuministros Logo" 
+                className="w-48 md:w-56 h-auto"
+                loading="lazy"
+              />
             </div>
+            
+            {/* Contact Section */}
             <div>
-              <h4 className="font-semibold mb-4">Contacto</h4>
+              <h4 className="font-semibold mb-4 text-lg">Contacto</h4>
               <ul className="space-y-2 text-gray-300">
-                <li>WhatsApp: +57 318 361 2161</li>
-                <li>Bogotá, Colombia</li>
+                <li className="flex items-center justify-center md:justify-start">
+                  <span className="mr-2">📱</span>
+                  WhatsApp: +57 318 361 2161
+                </li>
+                <li className="flex items-center justify-center md:justify-start">
+                  <span className="mr-2">📍</span>
+                  Bogotá, Colombia
+                </li>
               </ul>
             </div>
+            
+            {/* Business Hours */}
             <div>
-              <h4 className="font-semibold mb-4">Horarios de atención</h4>
-              <p className="text-gray-300">Lunes - Viernes: 8:00 am to 5:00 pm</p>
+              <h4 className="font-semibold mb-4 text-lg">Horarios de atención</h4>
+              <div className="text-gray-300 space-y-1">
+                <p className="font-medium">Lunes - Viernes</p>
+                <p>8:00 am - 5:00 pm</p>
+              </div>
             </div>
+            
+            {/* Social Media */}
             <div>
-              <h4 className="font-semibold mb-4">Redes Sociales</h4>
-              <div className="flex justify-center mt-2">
-                <a href="https://www.linkedin.com/company/prosuministros/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-[#00C8CF] hover:text-white text-3xl">
+              <h4 className="font-semibold mb-4 text-lg">Redes Sociales</h4>
+              <div className="flex justify-center md:justify-start">
+                <a 
+                  href="https://www.linkedin.com/company/prosuministros/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="LinkedIn ProSuministros"
+                  className="text-[#00C8CF] hover:text-white text-3xl transition-colors duration-200 hover:scale-110 transform"
+                >
                   <SiLinkedin />
                 </a>
               </div>
             </div>
           </div>
+          
+          {/* Copyright */}
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p>&copy; 2025 TDX. Todos los derechos reservados.</p>
           </div>
