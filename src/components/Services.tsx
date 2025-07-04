@@ -41,6 +41,10 @@ const services = [
   },
 ]
 
+const whatsappNumber = '573183612161'
+const whatsappMessage = 'Hola, me interesa conocer más sobre sus servicios'
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+
 const Services = () => {
   return (
     <section className="py-16 bg-white">
@@ -72,6 +76,7 @@ const Services = () => {
                   <Button 
                     variant="outline" 
                     className="w-full border-[#00C8CF] text-[#00C8CF] hover:bg-[#00C8CF] hover:text-white mt-auto"
+                    onClick={() => window.open(whatsappUrl, '_blank')}
                   >
                     Más Información
                   </Button>
@@ -82,8 +87,8 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" className="bg-[#00C8CF] hover:bg-[#00A5B0] text-white">
-            Solicitar Cotización Personalizada
+          <Button size="lg" className="bg-[#00C8CF] hover:bg-[#00A5B0] text-white" onClick={() => window.open(whatsappUrl, '_blank')}>
+            Solicitar Cotización
           </Button>
         </div>
       </div>

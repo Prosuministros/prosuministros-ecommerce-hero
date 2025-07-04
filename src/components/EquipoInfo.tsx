@@ -6,7 +6,7 @@ const EquipoInfo = () => {
       <img
         src="/img/Banner Prosuministros06.jpg"
         alt="Equipo ProSuministros"
-        className="w-full h-auto object-contain"
+        className="w-full h-auto object-cover"
         style={{ display: 'block' }}
       />
     </section>

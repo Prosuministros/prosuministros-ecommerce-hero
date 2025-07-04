@@ -1,4 +1,3 @@
-
 import Header from '@/components/Header'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -138,42 +137,42 @@ const Servicios = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2">
             {serviciosDetallados.map((servicio, index) => {
               const IconComponent = servicio.icon
               return (
-                <Card key={index} className="group hover:shadow-xl transition-all duration-300">
+                <Card
+                  key={index}
+                  className="w-full group hover:shadow-xl transition-all duration-300 mb-6 sm:mb-0"
+                >
                   <CardHeader>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#00C8CF] to-[#00A5B0] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <IconComponent className="w-8 h-8 text-white" />
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-4">
+                      <div className="w-16 h-16 bg-gradient-to-br from-[#00C8CF] to-[#00A5B0] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-2 sm:mb-0">
+                        <IconComponent className="w-10 h-10 text-white" />
                       </div>
-                      <div>
-                        <CardTitle className="text-xl font-semibold text-gray-900">
+                      <div className="text-center sm:text-left">
+                        <CardTitle className="text-lg sm:text-xl font-semibold text-gray-900">
                           {servicio.title}
                         </CardTitle>
                         <p className="text-[#00C8CF] font-semibold">{servicio.precio}</p>
                       </div>
                     </div>
                   </CardHeader>
-                  
                   <CardContent>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                    <p className="text-gray-600 mb-4 leading-relaxed text-center sm:text-left">
                       {servicio.description}
                     </p>
-                    
-                    <ul className="space-y-3 mb-6">
+                    <ul className="space-y-2 mb-4">
                       {servicio.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-sm text-gray-700">
-                          <CheckCircle className="w-4 h-4 text-[#00C8CF] mr-3 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-[#00C8CF] mr-2 flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
                     </ul>
-                    
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-[#00C8CF] text-[#00C8CF] hover:bg-[#00C8CF] hover:text-white"
+                    <Button
+                      variant="outline"
+                      className="w-full py-3 border-[#00C8CF] text-[#00C8CF] hover:bg-[#00C8CF] hover:text-white"
                       onClick={() => window.open(whatsappUrl, '_blank')}
                     >
                       Solicitar Información

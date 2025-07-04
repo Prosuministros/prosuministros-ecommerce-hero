@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { 
@@ -47,6 +46,10 @@ const SoftwareSection = () => {
       products: ["Oracle", "Sophos"]
     }
   ]
+
+  const whatsappNumber = '573183612161'
+  const whatsappMessage = 'Hola, me interesa conocer más sobre sus servicios de software'
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
   return (
     <section className="py-16 bg-white">
@@ -102,8 +105,9 @@ const SoftwareSection = () => {
           <Button 
             size="lg" 
             className="bg-[#00C8CF] hover:bg-[#00A5B0] text-white"
+            onClick={() => window.open(whatsappUrl, '_blank')}
           >
-            Ver Todas las Licencias
+            Solicitar Cotización
           </Button>
         </div>
       </div>
