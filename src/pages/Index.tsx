@@ -60,7 +60,6 @@ const Index = () => {
       <div id="software">
         <SoftwareSection />
       </div>
-      <FeaturedProducts />
       <BrandBanners />
       
       {/* Footer */}
