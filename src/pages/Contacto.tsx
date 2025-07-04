@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { toast } from '@/hooks/use-toast'
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -53,7 +54,10 @@ const Contacto = () => {
       PUBLIC_KEY
     )
     .then((result) => {
-      alert('¡Mensaje enviado correctamente!');
+      toast({
+        title: '¡Mensaje enviado correctamente!',
+        description: 'Nos pondremos en contacto contigo pronto.',
+      });
       setFormData({
         nombre: '',
         email: '',
@@ -63,7 +67,11 @@ const Contacto = () => {
         mensaje: ''
       });
     }, (error) => {
-      alert('Error al enviar el mensaje. Intenta de nuevo.');
+      console.error('Error al enviar el mensaje:', error);
+      toast({
+        title: 'Error al enviar el mensaje',
+        description: 'Intenta de nuevo o revisa tu conexión.',
+      });
     });
   }
 
