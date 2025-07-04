@@ -7,7 +7,7 @@ const BrandBanners = () => {
   const featuredBrands = []
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-0 bg-gray-50">
 
 
       {/* Carrusel de banners de ancho completo */}
@@ -79,18 +79,17 @@ const BrandBanners = () => {
               </CarouselItem>
             ))}
             <CarouselItem>
-              <div className="w-full min-h-[300px] md:min-h-[400px] flex items-center justify-center bg-[#00c8cf]">
+              <div className="w-full min-h-[300px] md:min-h-[400px] flex items-center justify-center">
                 <img
                   src="/img/BannerProsuministros04.jpg"
                   alt="Banner ProSuministros 04"
-                  className="max-h-[300px] md:max-h-[400px] w-auto object-contain"
-                  style={{ backgroundColor: '#00c8cf' }}
+                  className="w-full h-full object-cover"
                 />
               </div>
             </CarouselItem>
             <CarouselItem>
               <div
-                className="w-full min-h-[300px] md:min-h-[400px] flex items-center justify-center bg-[#00c8cf] cursor-pointer"
+                className="w-full min-h-[300px] md:min-h-[400px] flex items-center justify-center cursor-pointer"
                 onClick={() => window.open('/logitech', '_blank')}
                 role="button"
                 tabIndex={0}
@@ -100,8 +99,7 @@ const BrandBanners = () => {
                 <img
                   src="/img/BannerProsuministros05.jpg"
                   alt="Banner ProSuministros 05"
-                  className="max-h-[300px] md:max-h-[400px] w-auto object-contain"
-                  style={{ backgroundColor: '#00c8cf' }}
+                  className="w-full h-full object-cover"
                 />
               </div>
             </CarouselItem>
