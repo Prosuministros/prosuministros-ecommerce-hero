@@ -45,16 +45,7 @@ const Header = () => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-            {/* WhatsApp Button */}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => window.open(whatsappUrl, '_blank')}
-              className="hidden sm:flex items-center space-x-2 border-[#00C8CF] text-[#00C8CF] hover:bg-[#00C8CF] hover:text-white"
-            >
-              <SiWhatsapp className="w-4 h-4" />
-              <span>WhatsApp</span>
-            </Button>
+
 
             {/* Mobile menu button */}
             <Button

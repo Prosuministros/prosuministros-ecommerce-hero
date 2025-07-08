@@ -103,6 +103,7 @@ const BrandBanners = () => {
                 />
               </div>
             </CarouselItem>
+            
           </CarouselContent>
           
           <CarouselPrevious className="left-4 md:left-8" />

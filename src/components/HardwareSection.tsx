@@ -26,7 +26,7 @@ const HardwareSection = () => {
     },
     {
       id: 3,
-      title: "Computadores",
+      title: "Computo",
       icon: Computer,
       image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&h=300&fit=crop",
       description: "Equipos de cómputo para oficina y trabajo"
@@ -40,7 +40,7 @@ const HardwareSection = () => {
     },
     {
       id: 5,
-      title: "Impresora",
+      title: "Impresión",
       icon: Printer,
       image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop",
       description: "Equipos de impresión y digitalización"

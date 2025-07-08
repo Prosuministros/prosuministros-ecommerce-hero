@@ -11,6 +11,7 @@ import Contacto from "./pages/Contacto";
 import AdminLogin from "./pages/AdminLogin";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
+import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <WhatsAppFloatButton />
     </TooltipProvider>
   </QueryClientProvider>
 );

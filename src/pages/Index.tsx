@@ -8,7 +8,10 @@ import BrandBanners from '@/components/BrandBanners'
 import EquipoInfo from '@/components/EquipoInfo'
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel'
 import MarcasCarousel from '@/components/MarcasCarousel'
-import { SiLinkedin } from 'react-icons/si'
+import { SiLinkedin, SiWhatsapp } from 'react-icons/si'
+import BannerRenting from '@/components/BannerRenting'
+import BannerServicios from '@/components/BannerServicios'
+import BannerSoporte from '@/components/BannerSoporte'
 
 const Index = () => {
   return (
@@ -27,73 +30,22 @@ const Index = () => {
           <CarouselContent>
             {/* Hero Component */}
             <CarouselItem>
-              <div className="w-full h-[350px] xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] overflow-hidden">
                 <Hero />
-              </div>
             </CarouselItem>
             
             {/* Banner 1 - Renting Tecnológico */}
             <CarouselItem>
-              <div className="w-full h-[350px] xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] bg-[#00c8cf] flex items-center justify-center relative overflow-hidden">
-                <img
-                  src="/img/BannerProsuministros01.png"
-                  alt="Soluciones de Renting Tecnológico"
-                  className="w-full h-full object-cover object-center
-                            sm:object-contain 
-                            transform scale-110 sm:scale-100
-                            transition-transform duration-300"
-                  style={{
-                    objectPosition: 'center center',
-                    minWidth: '100%',
-                    minHeight: '100%'
-                  }}
-                  loading="lazy"
-                />
-                {/* Overlay sutil para mejor legibilidad en móvil */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10 sm:hidden pointer-events-none" />
-              </div>
+              <BannerRenting />
             </CarouselItem>
             
             {/* Banner 2 - Servicios Integrales */}
             <CarouselItem>
-              <div className="w-full h-[350px] xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] bg-[#00c8cf] flex items-center justify-center relative overflow-hidden">
-                <img
-                  src="/img/BannerProsuministros02.png"
-                  alt="Servicios Integrales para su Negocio"
-                  className="w-full h-full object-cover object-center
-                            sm:object-contain 
-                            transform scale-110 sm:scale-100
-                            transition-transform duration-300"
-                  style={{
-                    objectPosition: 'center center',
-                    minWidth: '100%',
-                    minHeight: '100%'
-                  }}
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10 sm:hidden pointer-events-none" />
-              </div>
+              <BannerServicios />
             </CarouselItem>
             
             {/* Banner 3 - Soporte Técnico */}
             <CarouselItem>
-              <div className="w-full h-[350px] xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] bg-[#00c8cf] flex items-center justify-center relative overflow-hidden">
-                <img
-                  src="/img/BannerProsuministros03.png"
-                  alt="Soporte Técnico Especializado"
-                  className="w-full h-full object-cover object-center
-                            sm:object-contain 
-                            transform scale-110 sm:scale-100
-                            transition-transform duration-300"
-                  style={{
-                    objectPosition: 'center center',
-                    minWidth: '100%',
-                    minHeight: '100%'
-                  }}
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10 sm:hidden pointer-events-none" />
-              </div>
+              <BannerSoporte />
             </CarouselItem>
           </CarouselContent>
           
@@ -146,7 +98,7 @@ const Index = () => {
               <h4 className="font-semibold mb-4 text-lg">Contacto</h4>
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-center justify-center md:justify-start">
-                  <span className="mr-2">📱</span>
+                  <span className="mr-2 text-[#25D366] text-xl"><SiWhatsapp /></span>
                   WhatsApp: +57 318 361 2161
                 </li>
                 <li className="flex items-center justify-center md:justify-start">
@@ -168,7 +120,7 @@ const Index = () => {
             {/* Social Media */}
             <div>
               <h4 className="font-semibold mb-4 text-lg">Redes Sociales</h4>
-              <div className="flex justify-center md:justify-start">
+              <div className="flex justify-center">
                 <a 
                   href="https://www.linkedin.com/company/prosuministros/" 
                   target="_blank" 

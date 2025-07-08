@@ -104,8 +104,8 @@ const Contacto = () => {
           <div className="lg:col-span-1">
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  Escribenos
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                ¡Escríbenos!
                 </h2>
                 <p className="text-gray-600 mb-8">
                   Para solicitar cualquier tipo de información o cotización via correo electrónico.
@@ -120,7 +120,7 @@ const Contacto = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-gray-900">
-                  Envíanos un Mensaje
+                  Envíanos un mensaje
                 </CardTitle>
                 <p className="text-gray-600">
                   Completa el formulario y nos pondremos en contacto contigo lo antes posible

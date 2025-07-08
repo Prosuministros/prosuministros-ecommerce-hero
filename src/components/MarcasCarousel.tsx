@@ -6,6 +6,7 @@ const logos = [
   '/img/Microsoft.png',
   '/img/dell.png',
   '/img/apple.png',
+  '/img/HP.png'
 ]
 
 // Calcula cuántas veces hay que repetir los logos para llenar la pantalla
