@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
+import { SiLinkedin, SiWhatsapp } from 'react-icons/si'
 import { 
   MapPin, 
   Phone, 
@@ -293,10 +294,16 @@ const Contacto = () => {
               <img src="/img/logoprosuministrosBlanco.png" alt="ProSuministros Logo" className="mx-auto mb-4 w-56 h-auto" />
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Contacto</h4>
+              <h4 className="font-semibold mb-4 text-lg">Contacto</h4>
               <ul className="space-y-2 text-gray-300">
-                <li>WhatsApp: +57 318 361 2161</li>
-                <li>Bogotá, Colombia</li>
+                <li className="flex items-center justify-center md:justify-start">
+                  <span className="mr-2 text-[#25D366] text-xl"><SiWhatsapp /></span>
+                  WhatsApp: +57 318 361 2161
+                </li>
+                <li className="flex items-center justify-center md:justify-start">
+                  <span className="mr-2">📍</span>
+                  Bogotá, Colombia
+                </li>
               </ul>
             </div>
             <div>
