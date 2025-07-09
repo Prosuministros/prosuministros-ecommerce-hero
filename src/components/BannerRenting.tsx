@@ -23,7 +23,7 @@ const BannerRenting = () => {
   return (
     <section className="w-full bg-white">
       <img
-        src="/img/BannerProsuministros01.png"
+        src="/img/BannerProsuministros02.png"
         alt="Equipo ProSuministros"
         className="w-full h-auto object-cover"
         style={{ display: 'block' }}

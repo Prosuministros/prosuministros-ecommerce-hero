@@ -105,9 +105,9 @@ const SoftwareSection = () => {
           <Button 
             size="lg" 
             className="bg-[#00C8CF] hover:bg-[#00A5B0] text-white"
-            onClick={() => window.open(whatsappUrl, '_blank')}
+            onClick={() => window.open('https://outlook.office.com/book/AgendaDanielValbuena@prosuministros.com/?ismsaljsauthenabled', '_blank')}
           >
-            Solicitar Cotización
+            Solicita tu cotización
           </Button>
         </div>
       </div>

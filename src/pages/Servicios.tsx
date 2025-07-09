@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import React, { useState } from 'react';
 import { 
   Server, 
   Shield, 
@@ -93,10 +94,18 @@ const serviciosDetallados = [
   }
 ]
 
+const extraInfo = [
+  'Contamos con ingenieros certificados y experiencia en proyectos de alta complejidad. Garantizamos la continuidad operativa y soporte post-implementación.',
+  'Nuestros expertos en ciberseguridad realizan análisis proactivos y capacitación para tu equipo, asegurando una protección integral.',
+  'Acompañamos la migración a la nube de principio a fin, optimizando costos y maximizando la seguridad de tus datos.',
+  'Ofrecemos monitoreo continuo y optimización de bases de datos, asegurando el máximo rendimiento y disponibilidad.',
+  'Soporte técnico personalizado, con atención prioritaria y reportes periódicos de estado de tus activos tecnológicos.',
+  'Consultores con experiencia en transformación digital para empresas de todos los tamaños. Te ayudamos a innovar y crecer.',
+];
+
 const Servicios = () => {
-  const whatsappNumber = '573183612161'
-  const whatsappMessage = 'Hola, me interesa conocer más sobre sus servicios tecnológicos'
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+  // Estado para controlar el flip de cada tarjeta
+  // (Elimina el estado flipped)
 
   return (
     <div className="min-h-screen bg-white">
@@ -112,15 +121,7 @@ const Servicios = () => {
             Soluciones integrales de TI para empresas que buscan eficiencia, 
             seguridad y crecimiento sostenible
           </p>
-          <Button 
-            size="lg" 
-            variant="secondary" 
-            onClick={() => window.open(whatsappUrl, '_blank')}
-            className="bg-white text-[#00C8CF] hover:bg-gray-100"
-          >
-            Solicitar Cotización
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
+          {/* Botón de cotización eliminado porque ya no se usa WhatsApp */}
         </div>
       </section>
 
@@ -141,10 +142,7 @@ const Servicios = () => {
             {serviciosDetallados.map((servicio, index) => {
               const IconComponent = servicio.icon
               return (
-                <Card
-                  key={index}
-                  className="w-full group hover:shadow-xl transition-all duration-300 mb-6 sm:mb-0"
-                >
+                <Card key={index} className="w-full group hover:shadow-xl transition-all duration-300 mb-6 sm:mb-0">
                   <CardHeader>
                     <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-4">
                       <div className="w-16 h-16 bg-gradient-to-br from-[#00C8CF] to-[#00A5B0] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-2 sm:mb-0">
@@ -173,9 +171,9 @@ const Servicios = () => {
                     <Button
                       variant="outline"
                       className="w-full py-3 border-[#00C8CF] text-[#00C8CF] hover:bg-[#00C8CF] hover:text-white"
-                      onClick={() => window.open(whatsappUrl, '_blank')}
+                      // Aquí puedes poner la acción que desees para 'Más Información', o dejarlo sin acción
                     >
-                      Solicitar Información
+                      Más Información
                     </Button>
                   </CardContent>
                 </Card>
@@ -199,7 +197,7 @@ const Servicios = () => {
             <Button 
               size="lg" 
               className="bg-[#00C8CF] hover:bg-[#00A5B0] text-white"
-              onClick={() => window.open(whatsappUrl, '_blank')}
+              onClick={() => window.open('https://wa.me/573183612161?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20tecnol%C3%B3gicos', '_blank')}
             >
               WhatsApp: +57 318 361 2161
             </Button>
@@ -213,6 +211,37 @@ const Servicios = () => {
           </div>
         </div>
       </section>
+      {/* Estilos para el flip 3D */}
+      <style>{`
+        .flip-card {
+          background-color: transparent;
+          width: 100%;
+          height: 100%;
+          perspective: 1200px;
+          min-height: 420px;
+        }
+        .flip-card-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.7s cubic-bezier(.4,2,.6,1);
+          transform-style: preserve-3d;
+        }
+        .flip-card-inner.flipped {
+          transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          top: 0;
+          left: 0;
+        }
+        .flip-card-back {
+          transform: rotateY(180deg);
+        }
+      `}</style>
     </div>
   )
 }

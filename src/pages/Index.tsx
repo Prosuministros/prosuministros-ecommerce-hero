@@ -28,10 +28,6 @@ const Index = () => {
           className="w-full"
         >
           <CarouselContent>
-            {/* Hero Component */}
-            <CarouselItem>
-                <Hero />
-            </CarouselItem>
             
             {/* Banner 1 - Renting Tecnológico */}
             <CarouselItem>
@@ -47,8 +43,12 @@ const Index = () => {
             <CarouselItem>
               <BannerSoporte />
             </CarouselItem>
+                     {/* Hero Component */}
+          <CarouselItem>
+                <Hero />
+           </CarouselItem>
           </CarouselContent>
-          
+
           {/* Navigation Buttons */}
           <CarouselPrevious className="left-2 sm:left-4 md:left-6 lg:left-8 z-20 bg-white/90 hover:bg-white border-2 border-[#00c8cf] text-[#00c8cf] hover:text-[#00c8cf] shadow-lg transition-all duration-200" />
           <CarouselNext className="right-2 sm:right-4 md:right-6 lg:right-8 z-20 bg-white/90 hover:bg-white border-2 border-[#00c8cf] text-[#00c8cf] hover:text-[#00c8cf] shadow-lg transition-all duration-200" />
