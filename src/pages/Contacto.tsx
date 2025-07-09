@@ -241,7 +241,7 @@ const Contacto = () => {
               ¿Por qué elegir Prosuministros?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Más de 10 años de experiencia respaldando el crecimiento tecnológico 
+              Más de 11 años de experiencia respaldando el crecimiento tecnológico 
               de empresas en Colombia
             </p>
           </div>

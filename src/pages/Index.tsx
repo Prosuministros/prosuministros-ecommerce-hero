@@ -39,10 +39,6 @@ const Index = () => {
               <BannerServicios />
             </CarouselItem>
             
-            {/* Banner 3 - Soporte Técnico */}
-            <CarouselItem>
-              <BannerSoporte />
-            </CarouselItem>
                      {/* Hero Component */}
           <CarouselItem>
                 <Hero />

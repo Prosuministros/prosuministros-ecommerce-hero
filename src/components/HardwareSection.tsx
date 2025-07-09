@@ -67,7 +67,7 @@ const HardwareSection = () => {
       id: 1,
       title: "Computo y Workstation",
       icon: Computer,
-      image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=300&fit=crop",
       // sin descripción
     },
     {
@@ -81,7 +81,7 @@ const HardwareSection = () => {
       id: 3,
       title: "Back up NAS y SAN",
       icon: Network,
-      image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop",
       // sin descripción
     },
     {
@@ -100,6 +100,9 @@ const HardwareSection = () => {
     }
   ];
   const [showAll, setShowAll] = useState(false);
+  const whatsappNumber = '573183612161'
+  const whatsappMessage = 'Hola, me interesa conocer más sobre hardware empresarial'
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
   return (
     <section className="py-16 bg-gray-50">
@@ -117,7 +120,11 @@ const HardwareSection = () => {
           {hardwareCategories.map((category) => {
             const IconComponent = category.icon;
             return (
-              <Card key={category.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <Card
+                key={category.id}
+                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+                onClick={() => window.open(whatsappUrl, '_blank')}
+              >
                 <CardHeader className="p-0">
                   <div className="relative overflow-hidden rounded-t-lg">
                     <img
@@ -160,10 +167,10 @@ const HardwareSection = () => {
             <div className="relative w-full max-w-full sm:max-w-2xl lg:max-w-4xl mx-auto animate-fade-in">
               {/* Barra superior de acento */}
               <div className="h-2 w-full rounded-t-xl bg-gradient-to-r from-[#00C8CF] to-[#00A5B0]"></div>
-              <div className="bg-white rounded-b-2xl rounded-t-none shadow-2xl p-4 sm:p-8 lg:p-10 pt-8 flex flex-col items-center relative">
+              <div className="bg-white rounded-b-2xl rounded-t-none shadow-2xl p-4 sm:p-8 lg:p-10 pt-16 flex flex-col items-center relative max-h-[90vh] overflow-y-auto">
                 {/* Ícono decorativo grande */}
-                <div className="-mt-12 sm:-mt-14 mb-2 flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-[#00C8CF] to-[#00A5B0] shadow-lg border-4 border-white">
-                  <Briefcase className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                <div className="hidden md:flex mb-4 items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#00C8CF] to-[#00A5B0] shadow-lg border-4 border-white">
+                  <Briefcase className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#00C8CF] mb-6 sm:mb-8 text-center tracking-tight">Portafolio completo de hardware</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full">
