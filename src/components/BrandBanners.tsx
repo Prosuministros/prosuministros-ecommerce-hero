@@ -81,7 +81,7 @@ const BrandBanners = () => {
             <CarouselItem>
               <div className="w-full min-h-[300px] md:min-h-[400px] flex items-center justify-center">
                 <img
-                  src="/img/BannerProsuministros04.jpg"
+                  src="/img/BannerProsuministros04.png"
                   alt="Banner ProSuministros 04"
                   className="w-full h-full object-cover"
                 />
@@ -97,7 +97,7 @@ const BrandBanners = () => {
                 aria-label="Ir a landing de Logitech"
               >
                 <img
-                  src="/img/BannerProsuministros05.jpg"
+                  src="/img/BannerProsuministros05.png"
                   alt="Banner ProSuministros 05"
                   className="w-full h-full object-cover"
                 />
