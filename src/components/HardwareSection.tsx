@@ -184,7 +184,7 @@ const HardwareSection = () => {
                 <Button 
                   variant="secondary" 
                   className="w-full mt-6 sm:mt-8 bg-[#00C8CF] text-white hover:bg-[#00A5B0] shadow-md text-base sm:text-lg font-semibold py-2 sm:py-3"
-                  onClick={() => window.open('https://outlook.office.com/book/AgendaDanielValbuena@prosuministros.com/?ismsaljsauthenabled', '_blank')}
+                  onClick={() => window.open(whatsappUrl, '_blank')}
                 >
                   Solicita tu cotización
                 </Button>
