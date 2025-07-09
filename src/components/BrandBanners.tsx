@@ -2,9 +2,21 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import { ExternalLink } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 const BrandBanners = () => {
   const featuredBrands = []
+  const [api, setApi] = useState<any>()
+
+  useEffect(() => {
+    if (!api) return
+
+    const interval = setInterval(() => {
+      api.scrollNext()
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [api])
 
   return (
     <section className="py-0 bg-gray-50">
@@ -13,6 +25,7 @@ const BrandBanners = () => {
       {/* Carrusel de banners de ancho completo */}
       <div className="w-full">
         <Carousel 
+          setApi={setApi}
           opts={{
             align: "start",
             loop: true,

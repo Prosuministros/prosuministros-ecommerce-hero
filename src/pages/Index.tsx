@@ -12,18 +12,32 @@ import { SiLinkedin, SiWhatsapp } from 'react-icons/si'
 import BannerRenting from '@/components/BannerRenting'
 import BannerServicios from '@/components/BannerServicios'
 import BannerSoporte from '@/components/BannerSoporte'
+import { useEffect, useState } from 'react'
 
 const Index = () => {
+  const [api, setApi] = useState<any>()
+
+  useEffect(() => {
+    if (!api) return
+
+    const interval = setInterval(() => {
+      api.scrollNext()
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [api])
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <div className="w-full relative">
         <Carousel 
+          setApi={setApi}
           opts={{ 
             align: 'start', 
             loop: true,
             slidesToScroll: 1,
-            duration: 20 
+            duration: 20
           }} 
           className="w-full"
         >
