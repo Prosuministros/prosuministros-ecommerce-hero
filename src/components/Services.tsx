@@ -70,8 +70,15 @@ const whatsappNumber = '573183612161'
 const whatsappMessage = 'Hola, me interesa conocer más sobre sus servicios'
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
-const Services = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+type ServicesProps = {
+  openIndex?: number | null;
+  setOpenIndex?: (i: number | null) => void;
+};
+
+const Services: React.FC<ServicesProps> = ({ openIndex: controlledOpenIndex, setOpenIndex: controlledSetOpenIndex }) => {
+  const [internalOpenIndex, internalSetOpenIndex] = useState<number | null>(null);
+  const openIndex = controlledOpenIndex !== undefined ? controlledOpenIndex : internalOpenIndex;
+  const setOpenIndex = controlledSetOpenIndex !== undefined ? controlledSetOpenIndex : internalSetOpenIndex;
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

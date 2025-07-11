@@ -11,11 +11,11 @@ import MarcasCarousel from '@/components/MarcasCarousel'
 import { SiLinkedin, SiWhatsapp } from 'react-icons/si'
 import BannerRenting from '@/components/BannerRenting'
 import BannerServicios from '@/components/BannerServicios'
-import BannerSoporte from '@/components/BannerSoporte'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 
 const Index = () => {
   const [api, setApi] = useState<any>()
+  const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(null)
 
   useEffect(() => {
     if (!api) return
@@ -26,6 +26,26 @@ const Index = () => {
 
     return () => clearInterval(interval)
   }, [api])
+
+  const handleBannerRentingClick = useCallback(() => {
+    const serviciosSection = document.getElementById('servicios');
+    if (serviciosSection) {
+      serviciosSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    setTimeout(() => {
+      setOpenServiceIndex(0); // 0 es Diagnóstico, instalación y configuración de infraestructura TI
+    }, 600);
+  }, []);
+
+  const handleBannerServiciosClick = useCallback(() => {
+    const serviciosSection = document.getElementById('servicios');
+    if (serviciosSection) {
+      serviciosSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    setTimeout(() => {
+      setOpenServiceIndex(1); // 1 es Bolsa de horas
+    }, 600);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -45,13 +65,14 @@ const Index = () => {
             
             {/* Banner 1 - Renting Tecnológico */}
             <CarouselItem>
-              <BannerRenting />
+              <BannerRenting onClick={handleBannerRentingClick} />
             </CarouselItem>
             
             {/* Banner 2 - Servicios Integrales */}
             <CarouselItem>
-              <BannerServicios />
+              <BannerServicios onClick={handleBannerServiciosClick} />
             </CarouselItem>
+
             
                      {/* Hero Component */}
           <CarouselItem>
@@ -70,7 +91,7 @@ const Index = () => {
       
       {/* Services Section */}
       <div id="servicios">
-        <Services />
+        <Services openIndex={openServiceIndex} setOpenIndex={setOpenServiceIndex} />
       </div>
       
       {/* Team Info */}

@@ -1,37 +1,19 @@
-/*const BannerSoporte = () => (
-  <section className="w-full h-[350px] xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] relative overflow-hidden flex items-center justify-center">*/
-    {/* Degradado personalizado */}
-   /* <div className="absolute inset-0 bg-gradient-to-br from-[#00c8cf] via-[#00e0e6] to-[#005e63]" />*/
-    {/* Imagen */}
-   /* <img
-      src="/img/BannerProsuministros03.png"
-      alt="Soporte Técnico Especializado"
-      className="w-full h-full object-cover object-center relative z-10"
-      style={{ minWidth: '100%', minHeight: '100%' }}
-      loading="lazy"
-    />*/
-    {/* Overlay sutil para mejor legibilidad en móvil */}
-  /*  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10 sm:hidden pointer-events-none z-20" />
-  </section>
-);
-
-export default BannerSoporte; */
-
-
 import React from 'react'
 
-const BannerSoporte = () => {
+type BannerSoporteProps = {
+  onClick?: () => void;
+};
+
+const BannerSoporte: React.FC<BannerSoporteProps> = ({ onClick }) => {
   return (
-    <a href="https://outlook.office.com/book/AgendaDanielValbuena@prosuministros.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" style={{display: 'block', width: '100%'}}>
-      <section className="w-full bg-white">
-        <img
-          src="/img/BannerProsuministros01.png"
-          alt="Equipo ProSuministros"
-          className="w-full h-auto object-cover"
-          style={{ display: 'block' }}
-        />
-      </section>
-    </a>
+    <section className="w-full bg-white cursor-pointer" onClick={onClick}>
+      <img
+        src="/img/BannerProsuministros01.png"
+        alt="Equipo ProSuministros"
+        className="w-full h-auto object-cover"
+        style={{ display: 'block' }}
+      />
+    </section>
   )
 }
 

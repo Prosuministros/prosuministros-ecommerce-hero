@@ -307,8 +307,11 @@ const Contacto = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Horarios de atención</h4>
-              <p className="text-gray-300">Lunes - Viernes: 8:00 am to 5:00 pm</p>
+              <h4 className="font-semibold mb-4 text-lg">Horarios de atención</h4>
+              <div className="text-gray-300 space-y-1">
+                <p className="font-medium">Lunes - Viernes</p>
+                <p>8:00 am - 5:00 pm</p>
+              </div>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Redes Sociales</h4>
