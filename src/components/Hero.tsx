@@ -1,15 +1,12 @@
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Shield, Zap, Users } from 'lucide-react'
 
-const Hero = () => {
-  const handleHeroClick = () => {
-    window.open('https://outlook.office.com/book/AgendaDanielValbuena@prosuministros.com/?ismsaljsauthenabled', '_blank');
-  };
+const Hero = ({ onClick }: { onClick?: () => void }) => {
   return (
     <section
       className="relative w-full font-[Verdana] text-[90%] cursor-pointer"
       style={{ aspectRatio: '8000/3333' }}
-      onClick={handleHeroClick}
+      onClick={onClick}
     >
       {/* Background with gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#00C8CF] via-[#00A5B0] to-[#161052] opacity-95" />

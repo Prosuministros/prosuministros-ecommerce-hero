@@ -61,7 +61,15 @@ const hardwarePortfolio = [
   }
 ];
 
-const HardwareSection = () => {
+type HardwareSectionProps = {
+  showAll?: boolean;
+  setShowAll?: (show: boolean) => void;
+};
+
+const HardwareSection: React.FC<HardwareSectionProps> = ({ showAll: controlledShowAll, setShowAll: controlledSetShowAll }) => {
+  const [internalShowAll, internalSetShowAll] = useState(false);
+  const showAll = controlledShowAll !== undefined ? controlledShowAll : internalShowAll;
+  const setShowAll = controlledSetShowAll !== undefined ? controlledSetShowAll : internalSetShowAll;
   const hardwareCategories = [
     {
       id: 1,
@@ -99,7 +107,6 @@ const HardwareSection = () => {
       // sin descripción
     }
   ];
-  const [showAll, setShowAll] = useState(false);
   const whatsappNumber = '573183612161'
   const whatsappMessage = 'Hola, me interesa conocer más sobre hardware empresarial'
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`

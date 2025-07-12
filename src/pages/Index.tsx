@@ -16,6 +16,7 @@ import { useEffect, useState, useCallback } from 'react'
 const Index = () => {
   const [api, setApi] = useState<any>()
   const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(null)
+  const [showHardwareModal, setShowHardwareModal] = useState(false)
 
   useEffect(() => {
     if (!api) return
@@ -44,6 +45,16 @@ const Index = () => {
     }
     setTimeout(() => {
       setOpenServiceIndex(1); // 1 es Bolsa de horas
+    }, 600);
+  }, []);
+
+  const handleHeroClick = useCallback(() => {
+    const hardwareSection = document.getElementById('hardware');
+    if (hardwareSection) {
+      hardwareSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    setTimeout(() => {
+      setShowHardwareModal(true);
     }, 600);
   }, []);
 
@@ -76,7 +87,7 @@ const Index = () => {
             
                      {/* Hero Component */}
           <CarouselItem>
-                <Hero />
+                <Hero onClick={handleHeroClick} />
            </CarouselItem>
           </CarouselContent>
 
@@ -99,7 +110,7 @@ const Index = () => {
       
       {/* Hardware Section */}
       <div id="hardware">
-        <HardwareSection />
+        <HardwareSection showAll={showHardwareModal} setShowAll={setShowHardwareModal} />
       </div>
       
       {/* Software Section */}
