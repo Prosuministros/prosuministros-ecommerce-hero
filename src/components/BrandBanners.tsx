@@ -102,6 +102,7 @@ const BrandBanners = () => {
             </CarouselItem>
             <CarouselItem>
               <div
+              
                 className="w-full min-h-[300px] md:min-h-[400px] flex items-center justify-center cursor-pointer"
                 onClick={() => window.open('/logitech', '_blank')}
                 role="button"
