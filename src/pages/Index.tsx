@@ -164,7 +164,7 @@ const Index = () => {
               <h4 className="font-semibold mb-4 text-lg">Redes Sociales</h4>
               <div className="flex justify-center">
                 <a 
-                  href="https://www.linkedin.com/company/prosuministros/" 
+                  href="https://www.linkedin.com/company/prosuministros-de-colombia/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="LinkedIn ProSuministros"
