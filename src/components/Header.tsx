@@ -11,7 +11,7 @@ const Header = () => {
     { name: 'Servicios', href: '/#servicios' },
     { name: 'Hardware', href: '/#hardware' },
     { name: 'Software', href: '/#software' },
-    { name: 'eCommerce', href: 'https://zhzwhe-up.myshopify.com/', external: true },
+    { name: 'eCommerce', href: 'https://c4bkku-n0.myshopify.com/', external: true },
     { name: 'Contacto', href: '/contacto' },
   ]
 
