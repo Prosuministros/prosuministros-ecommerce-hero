@@ -8,6 +8,7 @@ import Servicios from "./pages/Servicios";
 import Hardware from "./pages/Hardware";
 import Software from "./pages/Software";
 import Contacto from "./pages/Contacto";
+import Logitech from "./pages/Logitech";
 import AdminLogin from "./pages/AdminLogin";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/hardware" element={<Hardware />} />
           <Route path="/software" element={<Software />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/logitech" element={<Logitech />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
