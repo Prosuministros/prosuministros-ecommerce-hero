@@ -29,7 +29,7 @@ const SoftwareSection = () => {
       title: "Ciberseguridad",
       icon: Shield,
       image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=400&h=300&fit=crop",
-      products: ["AWS", "Check Point", "Trellix", "Acronis", "Hilistone"]
+      products: ["AWS", "Check Point", "Trellix", "Acronis", "Hillstone"]
     },
     {
       id: 4,
