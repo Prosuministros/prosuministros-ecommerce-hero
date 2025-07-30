@@ -59,6 +59,12 @@ const Contacto = () => {
         title: '¡Mensaje enviado correctamente!',
         description: 'Nos pondremos en contacto contigo pronto.',
       });
+
+       window.gtag?.("event", "conversion", {
+          send_to: "AW-743140885/G7_NCKq4wvsaEJXcreIC",
+          value: 1.0,
+          currency: "COP",
+        });
       setFormData({
         nombre: '',
         email: '',
