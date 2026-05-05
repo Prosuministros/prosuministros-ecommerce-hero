@@ -12,7 +12,6 @@ const Header = () => {
     { name: 'Hardware', href: '/#hardware' },
     { name: 'Software', href: '/#software' },
     { name: 'eCommerce', href: 'https://c4bkku-n0.myshopify.com/', external: true },
-    { name: 'Contacto', href: '/contacto' },
   ]
 
   const whatsappNumber = '573183612161'

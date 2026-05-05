@@ -194,19 +194,12 @@ const Servicios = () => {
             y diseñar la solución tecnológica perfecta para tu empresa
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-[#00C8CF] hover:bg-[#00A5B0] text-white"
               onClick={() => window.open('https://wa.me/573183612161?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20tecnol%C3%B3gicos', '_blank')}
             >
               WhatsApp: +57 318 361 2161
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              onClick={() => window.location.href = '/contacto'}
-            >
-              Formulario de Contacto
             </Button>
           </div>
         </div>
