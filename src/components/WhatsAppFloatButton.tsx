@@ -3,10 +3,20 @@ import { SiWhatsapp } from 'react-icons/si';
 const whatsappNumber = '573183612161';
 const whatsappMessage = 'Hola, me interesa conocer más sobre sus servicios';
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+const handleWhatsAppClick = () => {
+  const gtag = (window as any).gtag;
 
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      send_to: 'AW-743140885/pl4jCJHV-YoZEJXcreIC',
+    });
+  }
+
+  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+};
 const WhatsAppFloatButton = () => (
   <button
-    onClick={() => window.open(whatsappUrl, '_blank')}
+    onClick={handleWhatsAppClick}
     style={{
       position: 'fixed',
       right: 24,
